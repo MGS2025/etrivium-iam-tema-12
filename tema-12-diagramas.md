@@ -58,12 +58,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 240" role="img" aria-label="Cadena de conexión de un periférico: puerto, interfaz o bus, controlador de hardware y controlador de software o driver, hasta el sistema operativo">
   <style>.t{font:700 12px system-ui,sans-serif;fill:#fff}.s{font:10px system-ui,sans-serif;fill:#fff}.h{font:700 14px system-ui,sans-serif;fill:#0055a0}</style>
   <text x="340" y="28" text-anchor="middle" class="h">Cómo dialoga el periférico con el equipo</text>
-  <rect x="24" y="70" width="118" height="80" rx="8" fill="#003d73"/><text x="83" y="98" text-anchor="middle" class="t">PUERTO</text><text x="83" y="118" text-anchor="middle" class="s">Conector físico</text><text x="83" y="134" text-anchor="middle" class="s">(el «enchufe»)</text>
-  <rect x="164" y="70" width="118" height="80" rx="8" fill="#0055a0"/><text x="223" y="98" text-anchor="middle" class="t">INTERFAZ/BUS</text><text x="223" y="118" text-anchor="middle" class="s">Líneas y reglas</text><text x="223" y="134" text-anchor="middle" class="s">USB, PCIe, SATA</text>
-  <rect x="304" y="70" width="118" height="80" rx="8" fill="#2d8659"/><text x="363" y="98" text-anchor="middle" class="t">HOST CONTROLLER</text><text x="363" y="118" text-anchor="middle" class="s">Circuito de placa</text><text x="363" y="134" text-anchor="middle" class="s">(hardware)</text>
-  <rect x="444" y="70" width="118" height="80" rx="8" fill="#e89822"/><text x="503" y="98" text-anchor="middle" class="t">DRIVER</text><text x="503" y="118" text-anchor="middle" class="s">Traductor SO↔HW</text><text x="503" y="134" text-anchor="middle" class="s">(software)</text>
-  <rect x="584" y="70" width="72" height="80" rx="8" fill="#6ea3d2"/><text x="620" y="104" text-anchor="middle" class="t">SISTEMA</text><text x="620" y="122" text-anchor="middle" class="t">OPERATIVO</text>
-  <g stroke="#888" stroke-width="2" marker-end="url(#a2)"><path d="M142 110 L162 110"/><path d="M282 110 L302 110"/><path d="M422 110 L442 110"/><path d="M562 110 L582 110"/></g>
+  <rect x="22" y="70" width="108" height="80" rx="8" fill="#003d73"/><text x="76" y="98" text-anchor="middle" class="t">PUERTO</text><text x="76" y="118" text-anchor="middle" class="s">Conector físico</text><text x="76" y="134" text-anchor="middle" class="s">(el «enchufe»)</text>
+  <rect x="150" y="70" width="112" height="80" rx="8" fill="#0055a0"/><text x="206" y="98" text-anchor="middle" class="t">INTERFAZ/BUS</text><text x="206" y="118" text-anchor="middle" class="s">Líneas y reglas</text><text x="206" y="134" text-anchor="middle" class="s">USB, PCIe, SATA</text>
+  <rect x="282" y="70" width="128" height="80" rx="8" fill="#2d8659"/><text x="346" y="98" text-anchor="middle" class="t">HOST CONTROLLER</text><text x="346" y="118" text-anchor="middle" class="s">Circuito de placa</text><text x="346" y="134" text-anchor="middle" class="s">(hardware)</text>
+  <rect x="430" y="70" width="112" height="80" rx="8" fill="#e89822"/><text x="486" y="98" text-anchor="middle" class="t">DRIVER</text><text x="486" y="118" text-anchor="middle" class="s">Traductor SO↔HW</text><text x="486" y="134" text-anchor="middle" class="s">(software)</text>
+  <rect x="562" y="70" width="96" height="80" rx="8" fill="#6ea3d2"/><text x="610" y="104" text-anchor="middle" class="t">SISTEMA</text><text x="610" y="122" text-anchor="middle" class="t">OPERATIVO</text>
+  <g stroke="#888" stroke-width="2" marker-end="url(#a2)"><path d="M130 110 L148 110"/><path d="M262 110 L280 110"/><path d="M410 110 L428 110"/><path d="M542 110 L560 110"/></g>
   <defs><marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#888"/></marker></defs>
   <text x="672" y="228" text-anchor="end" font="11px system-ui,sans-serif" fill="#666">[Fuente: USB-IF; MS-DEVMGR]</text>
 </svg>
@@ -210,7 +210,7 @@
 **Propósito**: Comparar RAID 0/1/5/6/10 por técnica y tolerancia.
 
 ```svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340" role="img" aria-label="Niveles RAID: RAID 0 striping sin tolerancia, RAID 1 espejo, RAID 5 paridad tolera un fallo, RAID 6 doble paridad tolera dos, RAID 10 espejo más banda">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 350" role="img" aria-label="Niveles RAID: RAID 0 striping sin tolerancia, RAID 1 espejo, RAID 5 paridad tolera un fallo, RAID 6 doble paridad tolera dos, RAID 10 espejo más banda">
   <style>.t{font:700 13px system-ui,sans-serif;fill:#fff}.s{font:11px system-ui,sans-serif;fill:#fff}.h{font:700 14px system-ui,sans-serif;fill:#0055a0}.warn{font:700 12px system-ui,sans-serif;fill:#d13c3c}</style>
   <text x="340" y="26" text-anchor="middle" class="h">Niveles RAID: rendimiento y tolerancia a fallos</text>
   <rect x="24" y="46" width="632" height="52" rx="8" fill="#d13c3c"/><text x="340" y="70" text-anchor="middle" class="t">RAID 0 · Striping (reparto)</text><text x="340" y="88" text-anchor="middle" class="s">Máximo rendimiento · SIN redundancia: si falla 1 disco, se pierde todo</text>
@@ -218,7 +218,7 @@
   <rect x="24" y="166" width="632" height="52" rx="8" fill="#2d8659"/><text x="340" y="190" text-anchor="middle" class="t">RAID 5 · Striping + paridad (mín. 3 discos)</text><text x="340" y="208" text-anchor="middle" class="s">Buen equilibrio capacidad/seguridad · Tolera 1 fallo</text>
   <rect x="24" y="226" width="632" height="52" rx="8" fill="#003d73"/><text x="340" y="250" text-anchor="middle" class="t">RAID 6 · Doble paridad (mín. 4 discos)</text><text x="340" y="268" text-anchor="middle" class="s">Como RAID 5 pero tolera 2 fallos simultáneos</text>
   <rect x="24" y="286" width="632" height="42" rx="8" fill="#e89822"/><text x="340" y="313" text-anchor="middle" class="t">RAID 10 (1+0) · Espejo + banda (mín. 4) · Alto rendimiento y fiabilidad</text>
-  <text x="672" y="338" text-anchor="end" class="warn">RAID ≠ copia de seguridad</text>
+  <text x="672" y="344" text-anchor="end" class="warn">RAID ≠ copia de seguridad</text>
 </svg>
 ```
 
@@ -249,17 +249,17 @@
 **Propósito**: Oponer el modelo de pantalla al de impresión.
 
 ```svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" role="img" aria-label="RGB es aditivo y suma luz hasta el blanco, usado en pantallas; CMYK es sustractivo y resta luz con tintas hasta el negro, usado en impresión; CIELAB es la referencia independiente del dispositivo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 310" role="img" aria-label="RGB es aditivo y suma luz hasta el blanco, usado en pantallas; CMYK es sustractivo y resta luz con tintas hasta el negro, usado en impresión; CIELAB es la referencia independiente del dispositivo">
   <style>.t{font:700 14px system-ui,sans-serif;fill:#fff}.s{font:12px system-ui,sans-serif;fill:#333}.h{font:700 14px system-ui,sans-serif;fill:#0055a0}.lab{font:700 12px system-ui,sans-serif;fill:#fff}</style>
   <text x="340" y="26" text-anchor="middle" class="h">Dos formas de construir el color</text>
   <rect x="30" y="46" width="300" height="180" rx="10" fill="#0e0e0e"/>
   <circle cx="130" cy="120" r="46" fill="#ff2d2d" fill-opacity="0.75"/><circle cx="180" cy="120" r="46" fill="#2dff2d" fill-opacity="0.7"/><circle cx="155" cy="160" r="46" fill="#2d6bff" fill-opacity="0.7"/>
-  <text x="180" y="72" text-anchor="middle" class="t">RGB · ADITIVO</text><text x="255" y="120" text-anchor="middle" class="s" fill="#fff">Suma luz</text><text x="255" y="150" text-anchor="middle" class="s" fill="#fff">→ blanco</text><text x="180" y="212" text-anchor="middle" class="s" fill="#fff">Pantallas, cámaras, escáneres</text>
+  <text x="180" y="72" text-anchor="middle" class="t">RGB · ADITIVO</text><text x="255" y="120" text-anchor="middle" class="s" style="fill:#fff">Suma luz</text><text x="255" y="150" text-anchor="middle" class="s" style="fill:#fff">→ blanco</text><text x="180" y="212" text-anchor="middle" class="s" style="fill:#fff">Pantallas, cámaras, escáneres</text>
   <rect x="350" y="46" width="300" height="180" rx="10" fill="#f4f4f4" stroke="#ccc"/>
   <circle cx="450" cy="120" r="46" fill="#00b6d8" fill-opacity="0.6"/><circle cx="500" cy="120" r="46" fill="#e5008d" fill-opacity="0.55"/><circle cx="475" cy="160" r="46" fill="#ffe000" fill-opacity="0.7"/>
   <text x="500" y="72" text-anchor="middle" class="h">CMYK · SUSTRACTIVO</text><text x="575" y="120" text-anchor="middle" class="s">Resta luz</text><text x="575" y="150" text-anchor="middle" class="s">→ negro (K)</text><text x="500" y="212" text-anchor="middle" class="s">Impresión con tintas</text>
-  <rect x="30" y="240" width="620" height="38" rx="8" fill="#6ea3d2"/><text x="340" y="264" text-anchor="middle" class="lab">CIELAB (L·a·b): espacio de referencia independiente del dispositivo para convertir con fidelidad entre ambos</text>
-  <text x="672" y="294" text-anchor="end" font="11px system-ui,sans-serif" fill="#666">[Fuente: CIE]</text>
+  <rect x="30" y="236" width="620" height="50" rx="8" fill="#6ea3d2"/><text x="340" y="256" text-anchor="middle" class="lab">CIELAB (L·a·b): espacio de referencia independiente del dispositivo</text><text x="340" y="275" text-anchor="middle" class="lab">para convertir con fidelidad entre ambos</text>
+  <text x="672" y="304" text-anchor="end" font="11px system-ui,sans-serif" fill="#666">[Fuente: CIE]</text>
 </svg>
 ```
 
@@ -281,7 +281,7 @@
   <rect x="540" y="70" width="120" height="86" rx="8" fill="#0055a0"/><text x="600" y="58" text-anchor="middle" class="n">5</text><text x="600" y="102" text-anchor="middle" class="t">Expediente</text><text x="600" y="124" text-anchor="middle" class="s">Archivo</text><text x="600" y="142" text-anchor="middle" class="s">electrónico</text>
   <g stroke="#888" stroke-width="2" marker-end="url(#a12)"><path d="M138 113 L148 113"/><path d="M268 113 L278 113"/><path d="M398 113 L408 113"/><path d="M528 113 L538 113"/></g>
   <defs><marker id="a12" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#888"/></marker></defs>
-  <rect x="120" y="200" width="440" height="46" rx="8" fill="#eef6f0"/><text x="340" y="222" text-anchor="middle" class="res">Resultado: COPIA AUTÉNTICA (art. 27 Ley 39/2015)</text><text x="340" y="240" text-anchor="middle" class="s" fill="#333">con el mismo valor que el original en papel · PDF/A</text>
+  <rect x="120" y="200" width="440" height="46" rx="8" fill="#eef6f0"/><text x="340" y="222" text-anchor="middle" class="res">Resultado: COPIA AUTÉNTICA (art. 27 Ley 39/2015)</text><text x="340" y="240" text-anchor="middle" class="s" style="fill:#333">con el mismo valor que el original en papel · PDF/A</text>
   <text x="672" y="292" text-anchor="end" font="11px system-ui,sans-serif" fill="#666">[Fuente: RD 4/2010; NTI-DIGIT; L39-2015]</text>
 </svg>
 ```
