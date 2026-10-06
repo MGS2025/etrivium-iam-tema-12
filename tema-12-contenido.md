@@ -16,13 +16,13 @@
 
 Este tema incluye cuatro tipos de **cajas callout** para facilitar el estudio:
 
-> **[DATO CLAVE EXAMEN]** Información de alta densidad memorística, con alta probabilidad de aparecer en el test oficial.
+> **[DATO CLAVE]** Información de alta densidad memorística.
 
 > **[EJERCICIO RESUELTO]** Problema + solución paso a paso (cálculo de capacidad, elección de RAID, dimensionado de una imagen digitalizada…).
 
-> **[EJEMPLO AYTO MADRID]** Aplicación real de la teoría al entorno municipal (puesto de usuario, impresión en red, digitalización de expedientes, archivo electrónico).
+> **[EJEMPLO DE APLICACIÓN EN EL AYTO]** Aplicación real de la teoría al entorno municipal (puesto de usuario, impresión en red, digitalización de expedientes, archivo electrónico).
 
-> **[REFERENCIA CRUZADA]** Enlace conceptual a otros temas del temario oficial.
+> **[RELACIÓN CON OTROS TEMAS]** Enlace conceptual a otros temas del temario oficial.
 
 Los términos técnicos se mantienen en su nomenclatura habitual (driver, buffer, spooler, RAID, firmware…). Las fuentes se referencian con etiquetas breves tipo `[USB-IF]` o `[NTI-DIGIT]` — el registro completo está en `tema-12-fuentes.md`. Las unidades de medida (Gbps, ppp, W) se glosan la primera vez que aparecen.
 
@@ -36,11 +36,11 @@ Un **periférico** es todo dispositivo que se conecta a la unidad central de pro
 
 En el modelo clásico de un sistema informático se distinguen la **unidad central** (CPU, memoria principal y buses internos, tratados en el Tema 11) y las **unidades periféricas**. Sin periféricos, un ordenador sería incapaz de recibir órdenes, mostrar resultados o conservar datos de forma permanente: el teclado, la pantalla, la impresora, el disco y la tarjeta de red son las «manos, ojos y oídos» del sistema.
 
-> **[REFERENCIA CRUZADA]** El **Tema 11** describe la arquitectura del ordenador y sus componentes internos (CPU, memoria, placa base, buses); este **Tema 12** se ocupa de todo lo que se conecta a esa arquitectura desde el exterior. Los buses de comunicación con periféricos y el modelo OSI que enmarca la conectividad se retoman en los temas de comunicaciones (**Tema 33** y **Tema 34**).
+> **[RELACIÓN CON OTROS TEMAS]** El **Tema 11** describe la arquitectura del ordenador y sus componentes internos (CPU, memoria, placa base, buses); este **Tema 12** se ocupa de todo lo que se conecta a esa arquitectura desde el exterior. Los buses de comunicación con periféricos y el modelo OSI que enmarca la conectividad se retoman en los temas de comunicaciones (**Tema 33** y **Tema 34**).
 
 ### 1.2. Clasificación por función
 
-La clasificación más importante para el examen es la **funcional**, según la dirección del flujo de datos entre el periférico y la unidad central [ISO7498]:
+La clasificación principal es la **funcional**, según la dirección del flujo de datos entre el periférico y la unidad central [ISO7498]:
 
 - **Periféricos de entrada**: introducen datos en el sistema. Ejemplos: teclado, ratón, escáner, lector de código de barras, micrófono, webcam, lector de tarjetas, pantalla táctil (en su faceta de captura).
 - **Periféricos de salida**: extraen o presentan información procesada. Ejemplos: monitor, impresora, proyector, altavoces, auriculares.
@@ -48,7 +48,7 @@ La clasificación más importante para el examen es la **funcional**, según la 
 - **Periféricos de comunicación**: conectan el equipo con otros sistemas o redes. Ejemplos: tarjeta de red (Ethernet o Wi-Fi), módem, router, adaptador Bluetooth.
 - **Periféricos de almacenamiento**: conservan datos de forma persistente. Ejemplos: disco duro (HDD), unidad de estado sólido (SSD), memoria USB, grabadora óptica, NAS.
 
-> **[DATO CLAVE EXAMEN]** Un mismo dispositivo puede pertenecer a varias categorías. La **pantalla táctil** y la **impresora multifunción** son de **entrada/salida**; una **unidad de almacenamiento** es de E/S (lee y escribe) y a la vez de almacenamiento. Cuando el examen pida «clasifique», atienda a la función que se destaque en el enunciado.
+> **[DATO CLAVE]** Un mismo dispositivo puede pertenecer a varias categorías. La **pantalla táctil** y la **impresora multifunción** son de **entrada/salida**; una **unidad de almacenamiento** es de E/S (lee y escribe) y a la vez de almacenamiento. Para clasificarlo se atiende a la función que se destaque en cada caso.
 
 Otras clasificaciones complementarias:
 
@@ -61,7 +61,7 @@ Otras clasificaciones complementarias:
 - **Periférico compartido**: conectado a un equipo que lo comparte con otros a través de la red (una impresora conectada por USB a un PC que la publica).
 - **Periférico en red**: dispone de su propia interfaz de red e IP, y es accesible por cualquier equipo autorizado sin depender de un PC intermediario. Las **impresoras de red** y los **NAS** (Network Attached Storage) son los ejemplos típicos.
 
-> **[EJEMPLO AYTO MADRID]** En una oficina de atención al ciudadano de un distrito, cada puesto tiene periféricos **locales** (teclado, monitor, lector de DNI electrónico) y comparte periféricos **en red** (impresoras multifunción departamentales y escáneres de digitalización de expedientes). Este reparto reduce costes de consumibles y facilita la administración centralizada de colas de impresión.
+> **[EJEMPLO DE APLICACIÓN EN EL AYTO]** En una oficina de atención al ciudadano de un distrito, cada puesto tiene periféricos **locales** (teclado, monitor, lector de DNI electrónico) y comparte periféricos **en red** (impresoras multifunción departamentales y escáneres de digitalización de expedientes). Este reparto reduce costes de consumibles y facilita la administración centralizada de colas de impresión.
 
 ### 1.4. El bus, el controlador y el puerto: cómo dialoga el periférico con el equipo
 
@@ -72,7 +72,7 @@ Para que un periférico funcione intervienen cuatro elementos encadenados:
 3. **El controlador de hardware (host controller)**: el circuito de la placa base que gestiona ese bus.
 4. **El controlador de software (driver)**: el programa que traduce las órdenes genéricas del sistema operativo al lenguaje concreto del dispositivo (§2.7).
 
-> **[DATO CLAVE EXAMEN]** No confunda **puerto** (conector físico), **interfaz/bus** (reglas y líneas de transmisión) y **controlador**. Y dentro de «controlador» distinga el **host controller** (hardware) del **driver** (software). El examen suele jugar con estos matices.
+> **[DATO CLAVE]** No confunda **puerto** (conector físico), **interfaz/bus** (reglas y líneas de transmisión) y **controlador**. Y dentro de «controlador» distinga el **host controller** (hardware) del **driver** (software).
 
 ---
 
@@ -100,7 +100,7 @@ Conviene separar dos ejes que a menudo se confunden: la **versión** (velocidad 
 
 **Conectores (forma física):** Tipo A (el rectangular clásico), Tipo B (impresoras), Mini y Micro (dispositivos antiguos) y, sobre todo, **USB-C (Tipo C)**: pequeño, **reversible** (da igual la orientación), y capaz de transportar **datos, vídeo (DisplayPort/HDMI en modo alternativo) y energía** por el mismo cable.
 
-> **[DATO CLAVE EXAMEN]** **USB-C es un conector, no una velocidad.** Un puerto USB-C puede ser internamente USB 2.0 o USB4: por fuera son idénticos. No confunda «USB-C» (forma) con «USB4» (protocolo).
+> **[DATO CLAVE]** **USB-C es un conector, no una velocidad.** Un puerto USB-C puede ser internamente USB 2.0 o USB4: por fuera son idénticos. No confunda «USB-C» (forma) con «USB4» (protocolo).
 
 **USB Power Delivery (USB PD):** el estándar de entrega de energía sobre USB-C. Negocia dinámicamente la tensión y la corriente entre fuente y consumidor, alcanzando hasta **240 W** en USB PD 3.1, suficiente para cargar portátiles y monitores. Por eso un único cable USB-C puede sustituir al cargador propietario, al cable de vídeo y al de datos.
 
@@ -113,7 +113,7 @@ Son las dos grandes **interfaces de vídeo y audio digital** para conectar equip
 - **HDMI (High-Definition Multimedia Interface)** [HDMI]: dominante en el ámbito de consumo (televisores, consolas, proyectores). Transporta vídeo y audio digital por un mismo cable. HDMI 2.1 admite 4K a 120 Hz y 8K, e incluye canal de retorno de audio (eARC).
 - **DisplayPort** [VESA-DP]: estándar abierto de VESA, más habitual en el ámbito profesional e informático. Su gran ventaja es **MST (Multi-Stream Transport)**: permite encadenar varios monitores en serie (*daisy-chain*) desde una sola salida. DisplayPort 2.1 alcanza anchos de banda muy altos (hasta 80 Gbps).
 
-> **[DATO CLAVE EXAMEN]** Diferencie: **HDMI** = consumo/audiovisual, un monitor por puerto; **DisplayPort** = profesional, admite **varios monitores en cadena (MST)**. Ambos son digitales y llevan vídeo + audio. El antiguo **VGA** era analógico (ya en desuso) y el **DVI**, de transición.
+> **[DATO CLAVE]** Diferencie: **HDMI** = consumo/audiovisual, un monitor por puerto; **DisplayPort** = profesional, admite **varios monitores en cadena (MST)**. Ambos son digitales y llevan vídeo + audio. El antiguo **VGA** era analógico (ya en desuso) y el **DVI**, de transición.
 
 ### 2.4. Thunderbolt y otros estándares
 
@@ -137,7 +137,7 @@ La conexión sin cables se apoya en dos grandes familias, que se diferencian por
 | Wi-Fi 6E | 802.11ax | + 6 GHz | Amplía a la banda de 6 GHz |
 | Wi-Fi 7 | 802.11be | 2,4 / 5 / 6 GHz | Multi-Link Operation, canales de 320 MHz |
 
-> **[DATO CLAVE EXAMEN]** **Bluetooth = WPAN, corto alcance, periféricos personales; Wi-Fi = WLAN, acceso a red, mayor alcance.** Ambos comparten la banda de 2,4 GHz (de ahí posibles interferencias). La seguridad Wi-Fi se cifra con **WPA2** y **WPA3** (este último obligatorio en entornos que exijan alta seguridad).
+> **[DATO CLAVE]** **Bluetooth = WPAN, corto alcance, periféricos personales; Wi-Fi = WLAN, acceso a red, mayor alcance.** Ambos comparten la banda de 2,4 GHz (de ahí posibles interferencias). La seguridad Wi-Fi se cifra con **WPA2** y **WPA3** (este último obligatorio en entornos que exijan alta seguridad).
 
 ### 2.6. Tecnologías inalámbricas emergentes
 
@@ -157,7 +157,7 @@ Tipos y conceptos clave:
 - **Compatibilidad**: un driver se desarrolla para un sistema operativo y arquitectura concretos (Windows x64, Linux, macOS). La falta de driver para una versión de SO es causa frecuente de que un periférico antiguo deje de funcionar tras una actualización.
 - **Firma de controladores (driver signing)**: los sistemas modernos exigen que los drivers estén **firmados digitalmente** por el fabricante, para garantizar su origen e integridad y evitar código malicioso en el núcleo del sistema.
 
-> **[REFERENCIA CRUZADA]** La instalación, actualización y mantenimiento de los controladores como parte de la administración del sistema operativo se desarrolla en el **Tema 27** (Administración del sistema operativo y software de base). Los sistemas operativos concretos (Windows, Linux) que gestionan estos drivers son objeto del **Tema 14**.
+> **[RELACIÓN CON OTROS TEMAS]** La instalación, actualización y mantenimiento de los controladores como parte de la administración del sistema operativo se desarrolla en el **Tema 27** (Administración del sistema operativo y software de base). Los sistemas operativos concretos (Windows, Linux) que gestionan estos drivers son objeto del **Tema 14**.
 
 ### 2.8. Plug & Play y gestión automática de dispositivos
 
@@ -171,7 +171,7 @@ Tipos y conceptos clave:
 
 En Linux este cometido lo cumplen el subsistema **udev** y **sysfs**, que crean automáticamente los nodos de dispositivo y aplican reglas. En Windows lo hace el gestor **PnP** con el **Administrador de dispositivos**.
 
-> **[DATO CLAVE EXAMEN]** Plug & Play = detección + identificación + configuración **automáticas**. No lo confunda con **hot-plug** (conexión y desconexión «en caliente», con el equipo encendido), aunque suelen ir juntos: USB es a la vez PnP y hot-plug.
+> **[DATO CLAVE]** Plug & Play = detección + identificación + configuración **automáticas**. No lo confunda con **hot-plug** (conexión y desconexión «en caliente», con el equipo encendido), aunque suelen ir juntos: USB es a la vez PnP y hot-plug.
 
 ---
 
@@ -196,7 +196,7 @@ Cada sistema ofrece herramientas para ver y administrar los periféricos:
 | Escaneo | Software del fabricante / Fax y Escáner | SANE (`scanimage`, `simple-scan`) |
 | Discos y particiones | Administración de discos | `fdisk`, `parted`, `gparted`, `lsblk` |
 
-> **[EJEMPLO AYTO MADRID]** En un parque de cientos de equipos, la instalación no se hace máquina por máquina: se usan **directivas de grupo (GPO)** y herramientas de despliegue centralizado para instalar impresoras de red, distribuir drivers firmados y fijar la configuración (impresora por defecto del distrito, doble cara y blanco y negro para ahorrar consumibles). Así se garantiza homogeneidad y control.
+> **[EJEMPLO DE APLICACIÓN EN EL AYTO]** En un parque de cientos de equipos, la instalación no se hace máquina por máquina: se usan **directivas de grupo (GPO)** y herramientas de despliegue centralizado para instalar impresoras de red, distribuir drivers firmados y fijar la configuración (impresora por defecto del distrito, doble cara y blanco y negro para ahorrar consumibles). Así se garantiza homogeneidad y control.
 
 ### 3.3. Gestión y mantenimiento: actualización de controladores
 
@@ -207,7 +207,7 @@ Mantener los drivers al día corrige fallos, mejora el rendimiento y **cierra vu
 
 Buenas prácticas: usar solo **drivers firmados**, mantener un punto de restauración antes de cambios delicados y actualizar también el **firmware** de impresoras, escáneres y controladoras de disco cuando el fabricante publique correcciones.
 
-> **[REFERENCIA CRUZADA]** El diagnóstico de incidencias del puesto de usuario y su resolución (incluida la asistencia remota) se tratan con detalle en el **Tema 29** (Control remoto de puesto de usuario y gestión de la resolución de incidencias).
+> **[RELACIÓN CON OTROS TEMAS]** El diagnóstico de incidencias del puesto de usuario y su resolución (incluida la asistencia remota) se tratan con detalle en el **Tema 29** (Control remoto de puesto de usuario y gestión de la resolución de incidencias).
 
 ### 3.4. Diagnóstico y resolución de problemas
 
@@ -220,7 +220,7 @@ Un método ordenado ante un periférico que falla:
 5. **Aislar**: probar el periférico en otro equipo (¿falla el dispositivo o el equipo?) y otro dispositivo en el mismo puerto.
 6. **Conflictos de recursos** o compatibilidad de versión de SO como últimas hipótesis.
 
-> **[DATO CLAVE EXAMEN]** El diagnóstico va **de lo físico y sencillo a lo lógico y complejo**: primero cable y alimentación, después driver y sistema. Empezar reinstalando el sistema operativo ante un cable suelto es el error clásico.
+> **[DATO CLAVE]** El diagnóstico va **de lo físico y sencillo a lo lógico y complejo**: primero cable y alimentación, después driver y sistema. Empezar reinstalando el sistema operativo ante un cable suelto es el error clásico.
 
 ### 3.5. Seguridad en dispositivos: control de accesos
 
@@ -237,9 +237,9 @@ Los periféricos son una **vía de entrada y salida de datos** y, por tanto, un 
 - **Cifrado de soportes**: **BitLocker** (Windows) y **LUKS** (Linux) cifran discos y memorias, de modo que un soporte perdido o robado sea ilegible [MS-DEVMGR][ENS].
 - **Borrado seguro**: al retirar un disco, se sobrescribe o destruye para que los datos no sean recuperables.
 
-> **[EJEMPLO AYTO MADRID]** El **Esquema Nacional de Seguridad** [ENS] obliga a proteger los soportes de información que contienen datos personales de la ciudadanía. En la práctica: los portátiles municipales se cifran con BitLocker, las memorias USB no autorizadas se bloquean por política, y los discos de equipos que se dan de baja se someten a **borrado seguro** o destrucción física certificada antes de su retirada.
+> **[EJEMPLO DE APLICACIÓN EN EL AYTO]** El **Esquema Nacional de Seguridad** [ENS] obliga a proteger los soportes de información que contienen datos personales de la ciudadanía. En la práctica: los portátiles municipales se cifran con BitLocker, las memorias USB no autorizadas se bloquean por política, y los discos de equipos que se dan de baja se someten a **borrado seguro** o destrucción física certificada antes de su retirada.
 
-> **[REFERENCIA CRUZADA]** Los conceptos generales de seguridad de los sistemas de información (amenazas, criptografía, firma digital) se desarrollan en el **Tema 32**, y la protección de la confidencialidad y disponibilidad en el puesto de usuario en el **Tema 25**.
+> **[RELACIÓN CON OTROS TEMAS]** Los conceptos generales de seguridad de los sistemas de información (amenazas, criptografía, firma digital) se desarrollan en el **Tema 32**, y la protección de la confidencialidad y disponibilidad en el puesto de usuario en el **Tema 25**.
 
 ---
 
@@ -254,7 +254,7 @@ Una **impresora** es un periférico de salida que plasma sobre un soporte físic
 - **Matricial (de impacto)**: una cabeza con agujas golpea una cinta entintada contra el papel. Obsoleta salvo donde se necesita **copia por presión** (papel autocopiativo, formularios continuos multicopia).
 - **Térmica**: aplica calor sobre papel termosensible (tickets, etiquetas) o transfiere tinta de una cinta por calor (transferencia térmica).
 
-> **[DATO CLAVE EXAMEN]** **Láser** = tóner + fusión por calor, rápida, para documentos; **inyección** = tinta líquida en gotas, mejor color/foto; **matricial** = impacto, única que hace copia por presión; **térmica** = calor sobre papel especial, tickets y etiquetas.
+> **[DATO CLAVE]** **Láser** = tóner + fusión por calor, rápida, para documentos; **inyección** = tinta líquida en gotas, mejor color/foto; **matricial** = impacto, única que hace copia por presión; **térmica** = calor sobre papel especial, tickets y etiquetas.
 
 ### 4.2. Tipos de consumibles
 
@@ -274,7 +274,7 @@ Una **impresora en red** dispone de su propia IP y es accesible por muchos equip
 - **Protocolos de impresión**: **IPP (Internet Printing Protocol)**, el estándar moderno (base de AirPrint y de la impresión sin driver), y los antiguos LPD/LPR y puerto RAW 9100.
 - **Lenguajes de descripción de página (PDL)**: describen la página de forma independiente del papel concreto. Los principales son **PostScript** (Adobe, independiente del dispositivo, potente en artes gráficas), **PCL** (HP, muy extendido en ofimática) y, cada vez más, **PDF** directo [HP-PRINT][ISO32000].
 
-> **[EJEMPLO AYTO MADRID]** En las dependencias municipales predominan **impresoras multifunción en red** con impresión segura por liberación (*pull printing*): el usuario envía el trabajo, la cola lo retiene y el documento solo se imprime cuando el usuario se identifica con su tarjeta en el equipo. Así se evita que documentos con datos personales queden olvidados en la bandeja y se reduce el desperdicio de papel y tóner.
+> **[EJEMPLO DE APLICACIÓN EN EL AYTO]** En las dependencias municipales predominan **impresoras multifunción en red** con impresión segura por liberación (*pull printing*): el usuario envía el trabajo, la cola lo retiene y el documento solo se imprime cuando el usuario se identifica con su tarjeta en el equipo. Así se evita que documentos con datos personales queden olvidados en la bandeja y se reduce el desperdicio de papel y tóner.
 
 ### 4.4. Impresión 3D
 
@@ -302,7 +302,7 @@ El **almacenamiento secundario** conserva los datos de forma **persistente** (a 
 - **Estado sólido (SSD)**: memoria **flash NAND**, **sin partes móviles**. Mucho más rápido, silencioso y resistente que un HDD; menor capacidad por euro. Se conecta por SATA o, para máximo rendimiento, por **NVMe sobre PCIe** (formato M.2).
 - **Memorias flash extraíbles**: memorias USB (*pendrives*) y tarjetas SD/microSD, basadas también en flash NAND.
 
-> **[DATO CLAVE EXAMEN]** **HDD** = magnético, partes móviles, mucha capacidad barata, más lento. **SSD** = flash, sin partes móviles, muy rápido, más caro por GB. El **SSD NVMe** (PCIe) es mucho más rápido que el **SSD SATA**. La **cinta** sigue siendo el rey del archivo masivo a largo plazo por su coste por TB.
+> **[DATO CLAVE]** **HDD** = magnético, partes móviles, mucha capacidad barata, más lento. **SSD** = flash, sin partes móviles, muy rápido, más caro por GB. El **SSD NVMe** (PCIe) es mucho más rápido que el **SSD SATA**. La **cinta** sigue siendo el rey del archivo masivo a largo plazo por su coste por TB.
 
 ### 5.2. Tecnologías y formatos: interfaces y capacidades
 
@@ -328,7 +328,7 @@ Un **sistema de archivos (file system)** es la estructura lógica que **organiza
 | **APFS** | macOS | Optimizado para SSD, instantáneas |
 | **ISO 9660 / UDF** | Ópticos | Discos CD/DVD/Blu-ray |
 
-> **[DATO CLAVE EXAMEN]** **FAT32** es el más compatible pero **no admite archivos mayores de 4 GB**; para soportes extraíbles grandes se usa **exFAT**. **NTFS** aporta **permisos y journaling** en Windows; **ext4** es el equivalente en Linux. El *journaling* (registro por diario) permite recuperar la coherencia del sistema tras un corte de energía.
+> **[DATO CLAVE]** **FAT32** es el más compatible pero **no admite archivos mayores de 4 GB**; para soportes extraíbles grandes se usa **exFAT**. **NTFS** aporta **permisos y journaling** en Windows; **ext4** es el equivalente en Linux. El *journaling* (registro por diario) permite recuperar la coherencia del sistema tras un corte de energía.
 
 ### 5.4. Gestión del almacenamiento: particionado y formateo
 
@@ -349,13 +349,13 @@ Una **copia de seguridad (backup)** es un duplicado de los datos que permite **r
 
 Métricas de referencia: **RPO (Recovery Point Objective)**, cuántos datos se está dispuesto a perder (frecuencia de copia), y **RTO (Recovery Time Objective)**, en cuánto tiempo hay que restaurar el servicio.
 
-> **[DATO CLAVE EXAMEN]** Regla **3-2-1**: mantener **3 copias** de los datos, en **2 tipos de soporte** distintos, con **1 copia fuera** de las instalaciones (*offsite*). Una copia que nunca se ha probado a restaurar no es una copia fiable: hay que **verificar las restauraciones** periódicamente.
+> **[DATO CLAVE]** Regla **3-2-1**: mantener **3 copias** de los datos, en **2 tipos de soporte** distintos, con **1 copia fuera** de las instalaciones (*offsite*). Una copia que nunca se ha probado a restaurar no es una copia fiable: hay que **verificar las restauraciones** periódicamente.
 
-> **[REFERENCIA CRUZADA]** Los sistemas de almacenamiento corporativos, su virtualización y las políticas y procedimientos de backup y recuperación (incluidos entornos físicos y virtuales) se desarrollan en el **Tema 26**.
+> **[RELACIÓN CON OTROS TEMAS]** Los sistemas de almacenamiento corporativos, su virtualización y las políticas y procedimientos de backup y recuperación (incluidos entornos físicos y virtuales) se desarrollan en el **Tema 26**.
 
 ### 5.6. Sistemas de protección y redundancia (RAID)
 
-**RAID (Redundant Array of Independent Disks)** combina varios discos para lograr **más rendimiento, más capacidad y/o tolerancia a fallos** [SNIA-RAID]. Los niveles más preguntados:
+**RAID (Redundant Array of Independent Disks)** combina varios discos para lograr **más rendimiento, más capacidad y/o tolerancia a fallos** [SNIA-RAID]. Los niveles más habituales:
 
 | Nivel | Técnica | Tolerancia a fallo | Uso |
 |---|---|---|---|
@@ -365,7 +365,7 @@ Métricas de referencia: **RPO (Recovery Point Objective)**, cuántos datos se e
 | **RAID 6** | *Striping* + **doble paridad** | 2 discos | Como RAID 5 pero soporta 2 fallos; mínimo 4 discos |
 | **RAID 10 (1+0)** | Espejo + reparto | 1 por espejo | Alto rendimiento y fiabilidad; mínimo 4 discos |
 
-> **[DATO CLAVE EXAMEN]** **RAID 0 no es redundancia** (solo rendimiento; ningún disco de respaldo). **RAID 1** = espejo. **RAID 5** = paridad, tolera 1 fallo (mínimo 3 discos). **RAID 6** = doble paridad, tolera 2 fallos. Y, sobre todo: **RAID no es una copia de seguridad** — protege frente a la avería de un disco, no frente a un borrado, un cifrado por *ransomware* o un desastre. Se necesitan ambos: RAID **y** backup.
+> **[DATO CLAVE]** **RAID 0 no es redundancia** (solo rendimiento; ningún disco de respaldo). **RAID 1** = espejo. **RAID 5** = paridad, tolera 1 fallo (mínimo 3 discos). **RAID 6** = doble paridad, tolera 2 fallos. Y, sobre todo: **RAID no es una copia de seguridad** — protege frente a la avería de un disco, no frente a un borrado, un cifrado por *ransomware* o un desastre. Se necesitan ambos: RAID **y** backup.
 
 ---
 
@@ -382,7 +382,7 @@ Métricas de referencia: **RPO (Recovery Point Objective)**, cuántos datos se e
 - **Profundidad de color (bits por píxel)**: 1 bit (blanco y negro), 8 bits (256 grises), 24 bits (color verdadero).
 - **OCR (Reconocimiento Óptico de Caracteres)**: software que convierte la imagen de un texto en **texto editable y buscable**. Es esencial para que un expediente escaneado sea localizable por su contenido.
 
-> **[DATO CLAVE EXAMEN]** La **resolución** se mide en **ppp** y determina el detalle y el tamaño del archivo. El **OCR** transforma la imagen de un documento en texto seleccionable/buscable, pero **no cambia** que el fichero siga conteniendo la imagen; se suele generar un **PDF con capa de texto** (PDF buscable).
+> **[DATO CLAVE]** La **resolución** se mide en **ppp** y determina el detalle y el tamaño del archivo. El **OCR** transforma la imagen de un documento en texto seleccionable/buscable, pero **no cambia** que el fichero siga conteniendo la imagen; se suele generar un **PDF con capa de texto** (PDF buscable).
 
 ### 6.2. Dispositivos de visualización: monitores, proyectores y pantallas táctiles
 
@@ -395,7 +395,7 @@ Métricas de referencia: **RPO (Recovery Point Objective)**, cuántos datos se e
   - **Resistiva**: dos capas que se tocan al presionar; funciona con cualquier objeto, menor precisión.
   - **Capacitiva**: detecta la conductividad del dedo; multitáctil, nítida (la de los móviles y quioscos modernos).
 
-> **[EJEMPLO AYTO MADRID]** Los **quioscos de autoservicio** y las **pantallas de gestión de turnos** de las oficinas de atención a la ciudadanía usan pantallas **táctiles capacitivas**, robustas y multitáctiles. Su elección atiende también a criterios de **accesibilidad** (altura, contraste, tamaño de los elementos), tratados en el Tema 25.
+> **[EJEMPLO DE APLICACIÓN EN EL AYTO]** Los **quioscos de autoservicio** y las **pantallas de gestión de turnos** de las oficinas de atención a la ciudadanía usan pantallas **táctiles capacitivas**, robustas y multitáctiles. Su elección atiende también a criterios de **accesibilidad** (altura, contraste, tamaño de los elementos), tratados en el Tema 25.
 
 ### 6.3. Modelos de color
 
@@ -406,7 +406,7 @@ Un **modelo de color** describe numéricamente los colores. Los que hay que cono
 - **HSV / HSL**: describen el color por **tono, saturación y brillo/luminosidad**; más intuitivos para el diseño.
 - **CIELAB (L·a·b)**: espacio **independiente del dispositivo** definido por la CIE, que abarca todos los colores perceptibles; se usa como referencia para convertir con fidelidad entre RGB y CMYK (gestión de color, perfiles ICC).
 
-> **[DATO CLAVE EXAMEN]** **RGB = aditivo, luz, pantallas** (suma → blanco). **CMYK = sustractivo, tintas, impresión** (resta → negro). Por eso un color vivo en pantalla (RGB) puede verse más apagado impreso (CMYK): sus **gamas** no coinciden. **CIELAB** es el modelo de referencia independiente del dispositivo.
+> **[DATO CLAVE]** **RGB = aditivo, luz, pantallas** (suma → blanco). **CMYK = sustractivo, tintas, impresión** (resta → negro). Por eso un color vivo en pantalla (RGB) puede verse más apagado impreso (CMYK): sus **gamas** no coinciden. **CIELAB** es el modelo de referencia independiente del dispositivo.
 
 ### 6.4. Formatos y compresión de imágenes. Filtrado
 
@@ -445,7 +445,7 @@ Requisitos que la NTI fija para la **imagen electrónica** [NTI-DIGIT]:
 - **Metadatos mínimos obligatorios** de la imagen electrónica, que la describen y permiten su gestión y búsqueda.
 - **Firma**: la imagen se **firma electrónicamente** (o se le asocia un **CSV, Código Seguro de Verificación**) para garantizar su **integridad y autenticidad**.
 
-> **[DATO CLAVE EXAMEN]** La NTI de Digitalización exige una **resolución mínima de 200 ppp** para el papel, formatos del catálogo de estándares (PDF/A, TIFF…), **metadatos mínimos** y **firma electrónica o CSV** de la imagen. El objetivo es obtener una imagen electrónica **fiel, íntegra y auténtica**.
+> **[DATO CLAVE]** La NTI de Digitalización exige una **resolución mínima de 200 ppp** para el papel, formatos del catálogo de estándares (PDF/A, TIFF…), **metadatos mínimos** y **firma electrónica o CSV** de la imagen. El objetivo es obtener una imagen electrónica **fiel, íntegra y auténtica**.
 
 ### 6.6. El proceso de digitalización certificada
 
@@ -459,7 +459,7 @@ La **digitalización certificada** (o «copia auténtica de documentos en papel�
 
 El resultado es una **copia auténtica** (art. 27 de la Ley 39/2015) [L39-2015], con plena validez jurídica.
 
-> **[EJEMPLO AYTO MADRID]** En el registro y las oficinas de asistencia en materia de registro del Ayuntamiento, cuando un ciudadano presenta documentación en papel, se **digitaliza** conforme a la NTI: se escanea a ≥ 200 ppp, se genera un **PDF/A**, se le añaden metadatos y se **firma con el sello electrónico** del Ayuntamiento o se le asigna un **CSV**. La imagen resultante es una **copia auténtica** que se incorpora al expediente electrónico; el original en papel se devuelve al interesado. Así se cumple el principio de administración electrónica de la Ley 39/2015.
+> **[EJEMPLO DE APLICACIÓN EN EL AYTO]** En el registro y las oficinas de asistencia en materia de registro del Ayuntamiento, cuando un ciudadano presenta documentación en papel, se **digitaliza** conforme a la NTI: se escanea a ≥ 200 ppp, se genera un **PDF/A**, se le añaden metadatos y se **firma con el sello electrónico** del Ayuntamiento o se le asigna un **CSV**. La imagen resultante es una **copia auténtica** que se incorpora al expediente electrónico; el original en papel se devuelve al interesado. Así se cumple el principio de administración electrónica de la Ley 39/2015.
 
 ### 6.7. Conservación y disponibilidad. Normativa
 
@@ -470,9 +470,9 @@ Digitalizar es solo el principio: los documentos electrónicos deben **conservar
 - **Disponibilidad y redundancia**: copias de seguridad (§5.5) y RAID (§5.6), con copias *offsite*, para que un desastre no destruya el archivo electrónico.
 - **Marco normativo**: además del **ENI** [RD4-2010] y sus NTI [NTI-DIGIT], la **Ley 39/2015** [L39-2015] (documentos y copias auténticas, art. 26 y 27), el **Esquema Nacional de Seguridad** [ENS] (protección de la información) y el **RGPD/LOPDGDD** [RGPD] cuando la documentación contiene datos personales.
 
-> **[REFERENCIA CRUZADA]** Los principios básicos del **Esquema Nacional de Interoperabilidad (ENI)** y del **Esquema Nacional de Seguridad (ENS)** se estudian de forma monográfica en el **Tema 39**. La digitalización de este tema es la aplicación práctica del ENI al ciclo de vida del documento electrónico.
+> **[RELACIÓN CON OTROS TEMAS]** Los principios básicos del **Esquema Nacional de Interoperabilidad (ENI)** y del **Esquema Nacional de Seguridad (ENS)** se estudian de forma monográfica en el **Tema 39**. La digitalización de este tema es la aplicación práctica del ENI al ciclo de vida del documento electrónico.
 
-> **[DATO CLAVE EXAMEN]** Para el **archivo a largo plazo** el formato de referencia es **PDF/A** (ISO 19005): normalizado, autocontenido y no dependiente de software propietario. La conservación exige, además del formato, **integridad** (firma/sello/CSV, resellado) y **disponibilidad** (backup y redundancia).
+> **[DATO CLAVE]** Para el **archivo a largo plazo** el formato de referencia es **PDF/A** (ISO 19005): normalizado, autocontenido y no dependiente de software propietario. La conservación exige, además del formato, **integridad** (firma/sello/CSV, resellado) y **disponibilidad** (backup y redundancia).
 
 ---
 

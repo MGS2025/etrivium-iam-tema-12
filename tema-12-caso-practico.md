@@ -111,4 +111,4 @@ El servicio de archivo del Ayuntamiento debe **digitalizar expedientes en papel*
 
 ---
 
-*Estos tres casos cubren los ejes del tema aplicados al Ayuntamiento de Madrid. Las soluciones son orientativas: en el examen se valorará el razonamiento y la correcta aplicación de los conceptos, no la literalidad.*
+*Estos tres casos cubren los ejes del tema aplicados al Ayuntamiento de Madrid. Las soluciones son orientativas: lo que se trabaja es el razonamiento y la correcta aplicación de los conceptos, no la literalidad.*
